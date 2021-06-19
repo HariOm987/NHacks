@@ -1,0 +1,373 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}  
+.homepg{
+  background-image: url('Homepage.png');
+  width:100%;
+  height:100vh;
+}
+
+/* Nav Bar */
+.header {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  padding: 10px 20px;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  color: #9595fb;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px;
+  text-decoration: none;
+}
+/* logo */
+.header img{
+  width: 50px;
+  margin: 10px;
+  margin-left: 50px;
+}
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+  text-align: center;
+  
+
+}
+
+/* menu icon */
+
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 350px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 840px) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 20px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+
+}
+
+/* Ellipse 5 */
+.books{
+position: absolute;
+left: 62%;
+right: 11.67%;
+top: 5.08%;
+bottom: 60.74%;
+background: url(.jpg), rgba(196, 196, 196, 0);
+width:250px;
+height:250px;
+}
+
+
+#rectangle {
+            position: left;
+            left: 0%;
+            -webkit-transform: translateX(-20%);
+            -ms-transform: translateX(-20%);
+            transform: translateX(-20%);
+         }
+
+/* Dyslexic Tutor */
+.title{
+position: absolute;
+z-index: 0;
+left: 3%;
+right: 48.75%;
+top: 20%;
+bottom: 60.74%;
+font-family: 'Red Rose', cursive;
+//font-family: Red Rose;
+font-style: normal;
+font-weight: normal;
+font-size: 110px;
+line-height: 140px;
+color: #FFFFFF;
+}
+
+
+.disc{
+position: absolute;
+left: 51%;
+right: 0%;
+top: 39.65%;
+bottom: 26.27%;
+
+font-family: Red Rose;
+font-style: normal;
+font-weight: normal;
+font-size: 70px;
+line-height: 112px;
+color: #000000;
+}
+
+
+
+
+/* --------------------home----------------- */
+.home{
+  position: relative;
+width: 100vh;
+height: 100vh;
+
+background: #FFFFFF;
+}
+.path{
+  width: 100%;
+  height: 100vh;
+position: absolute;
+left: 115.1%;
+right: 0;
+//top: -11.13%;
+//bottom: 0;
+
+background: rgba(255, 73, 17, 0);
+mix-blend-mode: normal;
+opacity: 0.5;
+}
+
+.home img{
+position: absolute;
+width: 1150px;
+height: 500px;
+left: 24px;
+top: 50px;
+
+}
+
+/* Dashboard/activities*/
+svg {
+  position: absolute;
+  z-index: 0;
+}
+
+.inner-home {
+  position: relative;
+  z-index: 1;
+  margin-top: -88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-home h1{
+  font-size: 60px;
+}
+
+.gradientunderline {
+  background-image: linear-gradient(120deg, #ad83e0 0%, #80d0f8 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+  text-align: center;
+}
+
+.gradientunderline:hover {
+  background-size: 100% 88%;
+}
+
+.activity-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+width: 50vw;
+min-width: 1000px;
+}
+
+/* Activity squares/div */
+.activity-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: min-content;
+  padding: 20px 50px;
+  border-radius: 20px;
+  background-color: #C4C4C4;
+  margin-top: 20px;
+}
+
+.activity-div img{
+  width: 20vw;
+  min-width: 100px;
+  max-width: 200px;
+}
+
+.activity-div p {
+  font-size: 30px;
+  font-weight: 600;
+}
+/* ----------------------dyslexia--------------------*/
+
+.sec1{
+    margin: 40px;
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+}
+.sec1-lft{
+  background-color: rgba(0, 0, 0, 0.171);
+  text-align: center;
+  border-radius: 60px;
+  padding: 40px;
+} 
+.sec1-rt img{
+  //background-color: blue;
+  margin-left:170px;
+} 
+
+/* .sec2{
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 30% 30% 30%;
+    align-items: center;
+    flex-flow: right; 
+} */
+
+/*.circle{
+  width: 200px;
+  height:100px;
+  border-radius: 50px;
+  color: white;
+ background-color: black
+} */
+
+.left-circle{
+  position: absolute;
+  left: 20vh;
+  top: 65vh;
+  background: #404040;
+  width: 200px;
+  height:200px;
+  border-radius: 100px;
+  color: white;
+}
+
+.center-circle{
+  position: absolute;
+  left: 60vh;
+  top: 0vh;
+  background: #404040;
+  width: 200px;
+  height:200px;
+  border-radius: 100px;
+  color: white;
+}
+
+.right-circle{
+  position: absolute;
+  left: 70vh;
+  top: 0vh;
+  background: #404040;
+  width: 200px;
+  height:200px;
+  border-radius: 100px;
+  color: white;
+}
