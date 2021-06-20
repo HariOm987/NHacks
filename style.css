@@ -8,6 +8,12 @@ html, body {
   height:100vh;
 }
 
+
+.build-word-bg{
+  background-image: url('Homepage.png');
+}
+
+
 /* Nav Bar */
 .header {
   background-color: #fff;
@@ -154,9 +160,9 @@ html, body {
 /* Ellipse 5 */
 .books{
 position: absolute;
-left: 62%;
+left: 48%;
 right: 11.67%;
-top: 5.08%;
+top: 18.08%;
 bottom: 60.74%;
 background: url(.jpg), rgba(196, 196, 196, 0);
 width:250px;
@@ -192,7 +198,7 @@ color: #FFFFFF;
 
 .disc{
 position: absolute;
-left: 51%;
+left: 30%;
 right: 0%;
 top: 39.65%;
 bottom: 26.27%;
@@ -243,6 +249,21 @@ top: 50px;
 svg {
   position: absolute;
   z-index: 0;
+}
+
+.right-design{
+width: 100%;
+height: 100vh;
+position: absolute;
+left: 112vh;
+top: 50vh;
+}
+
+.rt-design{
+height: 100vh;
+position: absolute;
+left: 90vh;
+top: 50vh;
 }
 
 .inner-home {
@@ -306,7 +327,7 @@ min-width: 1000px;
 /* ----------------------dyslexia--------------------*/
 
 .sec1{
-    margin: 40px;
+    margin: 150px;
     position: relative;
     display: inline-grid;
     grid-template-columns: 50% 50%;
@@ -342,7 +363,7 @@ min-width: 1000px;
 .left-circle{
   position: absolute;
   left: 20vh;
-  top: 65vh;
+  top: 100vh;
   background: #404040;
   width: 200px;
   height:200px;
@@ -370,4 +391,22 @@ min-width: 1000px;
   height:200px;
   border-radius: 100px;
   color: white;
+}
+.subhead{
+  padding:82px 27px;
+}
+
+
+
+.dysimg{
+  float: right;
+  width: 400px;
+  height: 500px;
+  margin-top:70px;
+  margin-right: 50px;
+}
+/* -- Word Buid Game */
+.sec2 a{
+text-decoration: none;
+color: white;
 }

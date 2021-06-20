@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html style="overflow-x:hidden">
+    <head>
+        <title>Word Guessing Game</title>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+svg{
+  z-index:-3;
+}
+#wrapper {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    z-index: -3;
+    text-align: center;
+}
+
+#ig {
+  height: 50px;
+  width: 50px;
+  background-color: #00a8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-right-radius: 6px;
+  position: absolute;
+  top: 0;
+}
+
+#ig:hover {
+  background-color: #009dee;
+  transition: .5s;
+}
+
+.hint,
+.wrong {
+    height: 60px;
+    margin: 28x auto 18px;
+    background: transparent;
+    width: 100%;
+}
+
+.wrong {
+    letter-spacing: 8px;
+}
+
+#wrong-letters {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 80px;
+    padding: 10px;
+    margin: auto;
+    background-color: #b40303;
+    border-radius: 6px;
+    margin-bottom: 40px;
+}
+
+#wrong-letters p,
+.wrong {
+    margin: 8px;
+}
+
+.hint { margin-top: 0px;
+color: black;
+ }
+
+#input-field {
+    width: 30px;
+    height: 36px;
+    border: none;
+    border-radius: 6px;
+    padding: 0 20px;
+    border: 3px;
+
+    text-align: center;
+    font-size: 16px;
+    color: #000000;
+}
+
+button {
+    border: none;
+    border-radius: 6px;
+    height: 36px;
+    padding: 0 30px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #00a8ff;
+    outline: none;
+}
+
+button:hover {
+    background-color: #009dee;
+    transition: .4s;
+}
+
+#button-hint {
+    opacity: 0.5;
+}
+
+#button-hint:hover {
+    opacity: 1;
+    transition: .4s;
+}
+
+#lives {
+    font-size: 16px;
+    margin: 26px;
+}
+
+.line {
+    width: 40px;
+    height: 30px;
+    border-bottom: solid 3px #000000;
+    display: inline-block;
+    margin: 0 4px;
+    line-height: 0%;
+    position: relative;
+    font-weight: 600;
+}
+
+.container {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    margin-left: -25%;
+    margin-top: -25%;
+}
+
+#word-lines {
+    display: flex;
+    justify-content: center;
+    margin: 60px 0;
+}
+        </style>
+    </head>
+
+
+    <body>
+      
+    <header class="header" style="position:static">
+    <a href="https://nhacks.hariom04.repl.co">
+		  <img src="Dyslexic Tutor.png"></img>
+    </a>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span   class="navicon"></span></label>
+      <ul class="menu">
+        <li><a href="https://nhacks.hariom04.repl.co">Home</a></li>
+        <li><a href="https://nhacks.hariom04.repl.co/dyslexia.html">Dyslexia</a></li>
+        <li><a href="https://nhacks.hariom04.repl.co/activities.html">Activities</a></li>
+      </ul>
+    </header>
+
+
+    <svg width="1133" height="870" viewBox="0 0 1133 870" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.5" d="M946.847 -255.804C895.983 -403.8 725.188 -489.271 623.383 -615.359C587.962 -659.244 564.704 -659.196 521 -696.392C366.417 -827.953 263.796 -825.596 143.032 -785.597C85.4274 -766.53 29.1826 -740.022 -8.76051 -696.392C-37.9394 -662.841 -54.5856 -621.245 -70.7156 -580.331L-354.224 136.119C-385.866 216.115 -417.183 306.473 -377.343 388.015C-349.927 444.199 -293.782 484.299 -239.534 520.862C-172.877 565.791 -99.3235 611.552 -19.6059 612.063C71.5826 612.695 145.824 554.269 232.652 533.602C373.377 499.989 541.206 566.426 667.48 503.301C726.42 473.828 765.697 420.16 796.248 364.901C853.865 260.731 864.882 145.336 910.419 38.7978C949.339 -52.2721 981.673 -154.491 946.847 -255.804Z" fill="#FF4A11"/>
+</svg>
+
+
+<svg width="814" height="708" viewBox="0 0 814 708" fill="none" xmlns="http://www.w3.org/2000/svg" class="rt-design">
+<path opacity="0.5" d="M472.499 707.999C472.499 707.999 379.442 707.767 541.499 707.999C541.499 707.999 583.999 707.999 651.999 707.999C740.499 707.999 813.999 707.499 813.999 707.499C813.999 662.999 813.999 683.499 813.999 644.499L813.999 575L813.999 451.499L813.999 318.5L814 83.9998C753.082 69.9489 675.507 93.9523 612.953 113.1C536.088 136.628 454.236 164.992 403.671 226.622C345.794 297.092 344.477 391.556 305.896 472.041C243.457 602.558 192.408 529.64 161.999 667.499L153.999 708L215.999 707.999L304.999 707.999L388.999 707.999L472.499 707.999Z" fill="#FF4A11"/>
+</svg>
+
+
+    <path fill="#fff" d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+        </svg></a></div>
+
+        <div id="wrapper" style="margin-top:20px">
+            <p class="hint"></p>
+            <div id="word-lines"></div>
+            <input id="input-field" type="text" maxlength="1" autofocus autocomplete="off">
+            <button id="button-guess">Guess</button>
+            <button id="button-hint">Hint</button>
+            <p id="lives"></p>
+            <div id="wrong-letters">
+                <p>Wrong letters</p>
+                <h6 class="wrong"></h6>
+            </div>
+            <button id="button-new">New Game</button>
+            <script type="text/javascript" src="script.js"></script>
+        </div>
+    </body>
+</html>
+
